@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<entity-mappings ptype="MONOLITH" ppkg="lecture2.carModel" epkg="domain" v="5.4.3" rws="_16430427132616" Pws="_16430427132616" cws="_16430427132616" persistenceUnitName="DEFAULT_PU" sm="false" xs="false" id="_16430427132615" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <entity compositePrimaryKeyClass="CarPK" abs="false" class="Car" v="true" jbn="false" xre="false" m="false" rootElement="_16430427132615" id="_164304281740410">
+        <ath>maron</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="make" id="_164304284760213">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="model" id="_164304284803614">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="year" id="_164304284869015">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="VIN" id="_164304284911316">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="owner" id="_164304286375217">
+                <xwm/>
+                <xm/>
+            </basic>
+            <many-to-many own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_164304317104618" connected-attribute-id="_164304424645557" v="true" xvt="" name="persons" id="_164304424645456">
+                <xwm/>
+                <xm/>
+            </many-to-many>
+            <id attribute-type="Long" v="true" xvt="" name="id" id="_164304281740411">
+                <xwm/>
+                <xm/>
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="Car.findAll">
+            <query>Select e from Car e</query>
+        </nq>
+        <nq e="false" name="Car.findByMake">
+            <query>Select c from Car c where c.make=:make</query>
+        </nq>
+        <nq e="false" name="Car.findByModel">
+            <query>Select c from Car c where c.model=:model</query>
+        </nq>
+        <nq e="false" name="Car.findByYear">
+            <query>Select c from Car c where c.year=:year</query>
+        </nq>
+        <nq e="false" name="Car.findByVIN">
+            <query>Select c from Car c where c.VIN=:VIN</query>
+        </nq>
+        <nq e="false" name="Car.findByOwner">
+            <query>Select c from Car c where c.owner=:owner</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="PersonPK" abs="false" class="Person" v="true" jbn="false" xre="false" m="false" rootElement="_16430427132615" id="_164304317104618">
+        <ath>maron</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="firstname" id="_164304318588121">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="lastname" id="_164304318675122">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="SIN" id="_164304318773723">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="age" id="_164304319840624">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="insuredBy" id="_164304319910725">
+                <xwm/>
+                <xm/>
+            </basic>
+            <many-to-many collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_164304281740410" connected-attribute-id="_164304424645456" v="true" xvt="" name="cars" id="_164304424645557">
+                <xwm/>
+                <xm/>
+            </many-to-many>
+            <id attribute-type="Long" v="true" xvt="" name="id" id="_164304317104719">
+                <xwm/>
+                <xm/>
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="Person.findAll">
+            <query>Select e from Person e</query>
+        </nq>
+        <nq e="false" name="Person.findByFirstname">
+            <query>Select p from Person p where p.firstname=:firstname</query>
+        </nq>
+        <nq e="false" name="Person.findByLastname">
+            <query>Select p from Person p where p.lastname=:lastname</query>
+        </nq>
+        <nq e="false" name="Person.findBySIN">
+            <query>Select p from Person p where p.SIN=:SIN</query>
+        </nq>
+        <nq e="false" name="Person.findByAge">
+            <query>Select p from Person p where p.age=:age</query>
+        </nq>
+        <nq e="false" name="Person.findByInsuredBy">
+            <query>Select p from Person p where p.insuredBy=:insuredBy</query>
+        </nq>
+    </entity>
+    <embeddable abs="false" class="Behaviors" v="true" jbn="false" xre="false" m="false" rootElement="_16430427132615" id="_164304334928026">
+        <ath>maron</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="accelerate" id="_164304336634128">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="stop" id="_164304336690829">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="turn" id="_164304336838630">
+                <xwm/>
+                <xm/>
+            </basic>
+            <many-to-many own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_164304281740410" v="true" xvt="" name="cars" id="_164304364440239">
+                <xwm/>
+                <xm/>
+            </many-to-many>
+        </attributes>
+    </embeddable>
+    <embeddable abs="false" class="Behaviors_Person" v="true" jbn="false" xre="false" m="false" rootElement="_16430427132615" id="_164304342157331">
+        <ath>maron</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="transaction" id="_164304346328633">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="walk" id="_164304346367334">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="talk" id="_164304346404535">
+                <xwm/>
+                <xm/>
+            </basic>
+            <many-to-many own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_164304317104618" v="true" xvt="" name="persons" id="_164304359532237">
+                <xwm/>
+                <xm/>
+            </many-to-many>
+        </attributes>
+    </embeddable>
+    <c/>
+    <wsl>
+        <ws n="Main" id="_16430427132616">
+            <i ref="_164304281740410" x="38" y="35"/>
+            <i ref="_164304342157331" x="502" y="282"/>
+            <i ref="_164304334928026" x="119" y="272"/>
+            <i ref="_164304317104618" x="332" y="53"/>
+        </ws>
+    </wsl>
+</entity-mappings>

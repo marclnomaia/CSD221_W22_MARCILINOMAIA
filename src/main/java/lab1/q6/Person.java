@@ -32,7 +32,7 @@ public class Person extends Object implements java.io.Serializable {
         return firstname;
     }
 
-    public void setFirstname(String make) {
+    public void setFirstname(String firstname) {
         this.firstname = firstname;
     }
 
@@ -48,7 +48,7 @@ public class Person extends Object implements java.io.Serializable {
         return socialInNumber;
     }
 
-    public void setSocialInNumber(int year) {
+    public void setSocialInNumber(String socialInNumber) {
         this.socialInNumber = socialInNumber;
     }
 

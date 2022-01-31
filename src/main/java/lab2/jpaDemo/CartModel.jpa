@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<entity-mappings ptype="MONOLITH" ppkg="com.jpamodeler.kart.model" epkg="domain" v="5.4.3" rws="_16436468993502" Pws="_16436468993502" cws="_16436468993502" pu="true" persistenceUnitName="DEFAULT_PU" sm="false" xs="false" id="_16436468993501" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <entity compositePrimaryKeyClass="CustomerPK" abs="false" class="Customer" v="true" jbn="false" xre="false" m="false" rootElement="_16436468993501" id="_16436469864863">
+        <ath>maron</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="firtsname" id="_16436470048256">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="lastname" id="_16436470056017">
+                <xwm/>
+                <xm/>
+            </basic>
+            <embedded connected-class-id="_164364729244921" v="true" xvt="" name="address" id="_164364735630726">
+                <xwm/>
+                <xm/>
+            </embedded>
+            <one-to-many orp="false" own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_16436470354388" v="true" xvt="" name="orders" id="_164364711234912">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <id attribute-type="Long" v="true" xvt="" name="id" id="_16436469865214">
+                <xwm/>
+                <xm/>
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="Customer.findAll">
+            <query>Select e from Customer e</query>
+        </nq>
+        <nq e="false" name="Customer.findByFirtsname">
+            <query>Select c from Customer c where c.firtsname=:firtsname</query>
+        </nq>
+        <nq e="false" name="Customer.findByLastname">
+            <query>Select c from Customer c where c.lastname=:lastname</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="ProductOrderPK" abs="false" class="ProductOrder" v="true" jbn="false" xre="false" m="false" rootElement="_16436468993501" id="_16436470354388">
+        <ath>maron</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="amount" id="_164364719636913">
+                <xwm/>
+                <xm/>
+            </basic>
+            <one-to-many orp="false" own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_164364720209614" v="true" xvt="" name="products" id="_164364721870118">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <id attribute-type="Long" v="true" xvt="" name="id" id="_16436470354399">
+                <xwm/>
+                <xm/>
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="ProductOrder.findAll">
+            <query>Select e from ProductOrder e</query>
+        </nq>
+        <nq e="false" name="ProductOrder.findByAmount">
+            <query>Select p from ProductOrder p where p.amount=:amount</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="ProductPK" abs="false" class="Product" v="true" jbn="false" xre="false" m="false" rootElement="_16436468993501" id="_164364720209614">
+        <ath>maron</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="description" id="_164364727146819">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="retailPrice" id="_164364727190620">
+                <xwm/>
+                <xm/>
+            </basic>
+            <id attribute-type="Long" v="true" xvt="" name="id" id="_164364720209615">
+                <xwm/>
+                <xm/>
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="Product.findAll">
+            <query>Select e from Product e</query>
+        </nq>
+        <nq e="false" name="Product.findByDescription">
+            <query>Select p from Product p where p.description=:description</query>
+        </nq>
+        <nq e="false" name="Product.findByRetailPrice">
+            <query>Select p from Product p where p.retailPrice=:retailPrice</query>
+        </nq>
+    </entity>
+    <embeddable abs="false" class="Address" v="true" jbn="false" xre="false" m="false" rootElement="_16436468993501" id="_164364729244921">
+        <ath>maron</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="street" id="_164364738666527">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="city" id="_164364738711028">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="state" id="_164364738750929">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="country" id="_164364738793530">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="zipcode" id="_164364738838531">
+                <xwm/>
+                <xm/>
+            </basic>
+        </attributes>
+    </embeddable>
+    <c>
+        <db u="jdbc:mysql://localhost:3306/jpatester_mvn?zeroDateTimeBehavior=CONVERT_TO_NULL" n="root" p="" d="com.mysql.cj.jdbc.Driver"/>
+    </c>
+    <wsl>
+        <ws n="Main" id="_16436468993502">
+            <i ref="_16436469864863" x="35" y="55"/>
+            <i ref="_164364729244921" x="325" y="29"/>
+            <i ref="_164364720209614" x="420" y="409"/>
+            <i ref="_16436470354388" x="96" y="369"/>
+        </ws>
+    </wsl>
+</entity-mappings>
