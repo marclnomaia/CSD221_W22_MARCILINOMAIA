@@ -7,6 +7,9 @@
     <class>lab2.jpamodeler.kart.model.domain.Product</class>
     <class>lecture2.carModel.domain.Car</class>
     <class>lecture2.carModel.domain.Person</class>
+    <class>lab2_part2.domain.Person</class>
+    <class>lab2_part2.domain.Customer</class>
+    <class>lab2_part2.domain.Employee</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jpatester_mvn?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
       <property name="javax.persistence.jdbc.password" value="Password88"/>
