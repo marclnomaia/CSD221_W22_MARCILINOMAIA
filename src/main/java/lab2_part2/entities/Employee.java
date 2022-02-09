@@ -1,4 +1,4 @@
-package lab2_part2.domain;
+package lab2_part2.entities;
 
 import javax.persistence.Basic;
 import javax.persistence.Entity;
@@ -6,13 +6,14 @@ import javax.persistence.Entity;
 /**
  * @author maron
  */
+
 @Entity
 public class Employee extends Person {
 
     @Basic
     private String title;
     @Basic
-    private String salary;
+    private double salary;
 
     public String getTitle() {
         return title;
@@ -22,11 +23,11 @@ public class Employee extends Person {
         this.title = title;
     }
 
-    public String getSalary() {
+    public double getSalary() {
         return salary;
     }
 
-    public void setSalary(String salary) {
+    public void setSalary(double salary) {
         this.salary = salary;
     }
 

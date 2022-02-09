@@ -1,33 +1,33 @@
-package lab2_part2.domain;
+package lab2_part2.entities;
 
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import lab1.q6.App;
-
 
 /**
  * @author maron
  */
+
 @Entity
 public class Person {
 
     @Id
-    @GeneratedValue
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     @Basic
     private String firstname;
     @Basic
     private String lastname;
     @Basic
-    private String SIN;
+    private int SIN;
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -47,11 +47,11 @@ public class Person {
         this.lastname = lastname;
     }
 
-    public String getSIN() {
+    public int getSIN() {
         return SIN;
     }
 
-    public void setSIN(String SIN) {
+    public void setSIN(int SIN) {
         this.SIN = SIN;
     }
 

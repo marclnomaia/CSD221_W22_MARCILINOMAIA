@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<entity-mappings ptype="MONOLITH" ppkg="lab2_part2" epkg="domain" v="5.4.3" rws="_16439176016672" cws="_16439176016672" persistenceUnitName="DEFAULT_PU" sm="false" xs="false" id="_16439176016671" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<entity-mappings ptype="MONOLITH" ppkg="lab2_part2" epkg="entities" v="5.4.3" rws="_16439176016672" Pws="_16439176016672" cws="_16439176016672" persistenceUnitName="L2P2_DEFAULT_PU" sm="false" xs="false" id="_16439176016671" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <schema>lab2_part2</schema>
     <entity compositePrimaryKeyClass="PersonPK" abs="false" class="Person" v="true" jbn="false" xre="false" m="false" rootElement="_16439176016671" id="_16439176158223">
         <ath>maron</ath>
         <attributes>
@@ -11,14 +12,14 @@
                 <xwm/>
                 <xm/>
             </basic>
-            <basic attribute-type="String" v="true" xvt="" name="SIN" id="_164391768761714">
+            <basic attribute-type="int" v="true" xvt="" name="SIN" id="_164391768761714">
                 <xwm/>
                 <xm/>
             </basic>
-            <id attribute-type="Long" v="true" xvt="" name="id" id="_16439176158674">
+            <id attribute-type="int" v="true" xvt="" name="id" id="_16439176158674">
                 <xwm/>
                 <xm/>
-                <generated-value strategy="DEFAULT"/>
+                <generated-value strategy="IDENTITY"/>
             </id>
         </attributes>
         <nq e="false" name="Person.findAll">
@@ -37,11 +38,11 @@
     <entity compositePrimaryKeyClass="CustomerPK" abs="false" class="Customer" superclassId="_16439176158223" v="true" jbn="false" xre="false" m="false" rootElement="_16439176016671" id="_16439176190256">
         <ath>maron</ath>
         <attributes>
-            <basic attribute-type="String" v="true" xvt="" name="credit_card_number" id="_164391769312015">
+            <basic attribute-type="int" v="true" xvt="" name="credit_card_number" id="_164391769312015">
                 <xwm/>
                 <xm/>
             </basic>
-            <basic attribute-type="String" v="true" xvt="" name="cust_id" id="_164391769333316">
+            <basic attribute-type="int" v="true" xvt="" name="cust_id" id="_164391769333316">
                 <xwm/>
                 <xm/>
             </basic>
@@ -63,7 +64,7 @@
                 <xwm/>
                 <xm/>
             </basic>
-            <basic attribute-type="String" v="true" xvt="" name="salary" id="_164391769674618">
+            <basic attribute-type="double" v="true" xvt="" name="salary" id="_164391769674618">
                 <xwm/>
                 <xm/>
             </basic>
