@@ -12,14 +12,21 @@ package lab3B;
 public class Book extends Publication {
     private String author;
 
-    
-
+    public Book() {
+        super("", 0, 0);
+    }
     public Book(String author, String title, double price, int copies) {
         super(title, price, copies);
         this.author = author;
     }
 
-    
+    @Override
+    public String toString() {
+        String s=super.toString(); //To change body of generated methods, choose Tools | Templates.
+        return "Author:"+author+", "+s;
+    }
+
+
 
   
 

@@ -13,6 +13,10 @@ public class Publication {
     private String title;
     private double price;
     private int copies;
+
+    public Publication() {
+        title="";
+    }
     
     
 

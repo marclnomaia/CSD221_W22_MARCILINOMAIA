@@ -37,6 +37,7 @@ public class App {
     private Scanner input;
 
     void run() throws Exception {
+        input=new Scanner(System.in);
         bookList = new Book[100];
         boolean exit = false;
         String mainMenu = ""
@@ -47,18 +48,16 @@ public class App {
                 + "5. List Magazine\n"
                 + "6. Add Disc Magazine\n"
                 + "7. List Disc Magazine\n"
-                + "8. Exit";
+                + "8. Exit\n"
+                + "9. List books";
         while (!exit) {
-            input = new Scanner(System.in);
+//            input = new Scanner(System.in);
             System.out.println(mainMenu);
-            int choice = input.nextInt();
+            int choice=0;// = input.nextInt();
+            choice=getInput(choice);
             switch (choice) {
                 case 1:
-                    try {
                     addBook();
-                } catch (Exception ex) {
-                    Logger.getLogger(lab3B.App.class.getName()).log(Level.SEVERE, null, ex);
-                }
                 break;
 
                 case 2:
@@ -96,6 +95,10 @@ public class App {
                     listDiscMag();
                     break;
 
+                case 9:
+                    listBook();
+                    break;
+
                 case 8:
                     exit = true;
                     break;
@@ -106,22 +109,29 @@ public class App {
         System.exit(0);
     }
 
-    private void addBook() throws Exception {
+    private void addBook() {
+        Book newBook=new Book();
+        
         try {
-            Scanner scan = new Scanner(System.in);
+//            Scanner scan = new Scanner(System.in);
             System.out.println("Enter Author");
-            String author = input.next();
+            newBook.setAuthor(getInput(newBook.getAuthor()));
+//            String author = input.next();
             System.out.println("Add Title ");
-            String title = input.next();
+//            String title = input.next();
+            newBook.setTitle(getInput(newBook.getTitle()));
             System.out.println("Enter Price");
-            double price = scan.nextDouble();
+//            double price = scan.nextDouble();
+            newBook.setPrice(getInput(newBook.getPrice()));
+
             System.out.println("Enter Copies");
-            int copies = scan.nextInt();
+//            int copies = scan.nextInt();
+            newBook.setCopies(getInput(newBook.getCopies()));
 
 //String choice = scan.nextLine();
-            Book book = new Book(author, title, price, copies);
+//            Book book = new Book(author, title, price, copies);
             //int currentBook = 0;
-            bookList[currentBook] = book;
+            bookList[currentBook] = newBook;
             currentBook++;
             // throw new Exception();
         } catch (Exception e) {
@@ -183,8 +193,9 @@ public class App {
     private void editBook() {
         listBook();
         System.out.println("Which Book would you like to edit ?:");
-        int choice = input.nextInt();
-        input = new Scanner(System.in); // reset the scanner
+        int choice=0;
+        choice=getInput(choice);
+//        input = new Scanner(System.in); // reset the scanner
         if ((choice <= currentBook + 1) && choice > 0) {
             Book b = bookList[choice - 1];
             System.out.println("Author: " + b.getAuthor());
@@ -290,4 +301,6 @@ public class App {
         }
 
     }
+
+
 }
