@@ -35,6 +35,7 @@ public class App {
 
     
     private Scanner input;
+    private Book[] books;
     
     void run() throws Exception {
         bookList = new Book[100];
@@ -182,13 +183,54 @@ private void addDiscMag() throws Exception {
         }
 
     }
-private void  editBook()
-  {
-  } /*int index=l.indexOf(bookList);
-     bookList.remove(index)   
-      bookList.add(updated);
-  }
-*/
+ private void editBook() {
+        listBook();
+        System.out.println("Which Book would you like to edit ?:");
+        int choice = input.nextInt();
+        input = new Scanner(System.in); // reset the scanner
+        if ((choice < currentBook+ 1) && choice > 0) {
+            Book b = books[choice - 1];
+            System.out.println("Author: " + b.getAuthor());
+            b.setAuthor(getInput(b.getAuthor()));
+            System.out.println("Title: " + b.getTitle());
+            b.setTitle(getInput(b.getTitle()));
+            System.out.println("Price: " + b.getPrice());
+            b.setPrice(getInput(b.getPrice()));
+            System.out.println("Copies: " + b.getCopies());
+            b.setCopies(getInput(b.getCopies()));
+        } else {
+            System.out.println("Choice out of bounds");
+        }
+        System.out.println("");
+    }
+
+    private String getInput(String s) {
+        String ss = input.nextLine();
+        if (ss.trim().isEmpty()) {
+            return s;
+        }
+        Scanner in2 = new Scanner(ss);
+        return in2.nextLine();
+    }
+
+    private int getInput(int i) {
+        String s = input.nextLine();
+        if (s.trim().isEmpty()) {
+            return i;
+        }
+        Scanner in2 = new Scanner(s);
+        return in2.nextInt();
+    }
+ private double getInput(double i) {
+        String s = input.nextLine();
+        if (s.trim().isEmpty()) {
+            return i;
+        }
+        Scanner in2 = new Scanner(s);
+        return in2.nextDouble();
+    }
+
+
 
 private void listBook() {
 
