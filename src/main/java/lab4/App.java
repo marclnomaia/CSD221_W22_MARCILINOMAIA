@@ -199,6 +199,7 @@ public class App {
             // throw new Exception();
         } catch (Exception e) {
             //throw new Exception("Error Adding a Book");
+            System.out.println("error: "+e.getMessage());
         }
 
     }
