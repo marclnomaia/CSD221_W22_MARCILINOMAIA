@@ -15,10 +15,6 @@ public class DiscMag extends Magazine {
     public DiscMag(int orderQty, String currIssue, String title, double price, int copies) {
         super(orderQty, currIssue, title, price, copies);
     }
-   
-
-    
-
     /**
      * @return the hasDisc
      */

@@ -11,6 +11,10 @@ package lab4;
  */
 public class Ticket implements SaleableItem{
     private double price;
+
+    Ticket(double price, int copies) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 
     
@@ -37,6 +41,14 @@ public class Ticket implements SaleableItem{
         System.out.println(toString());
         System.out.println("************************************");
         System.out.println();
+    }
+
+    String getCopies() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    void setCopies(String input) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

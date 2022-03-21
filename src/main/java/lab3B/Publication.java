@@ -17,23 +17,14 @@ public class Publication {
     public Publication() {
         title="";
     }
-    
-    
-
     public Publication(String title, double price, int copies) {
         this.title = title;
         this.price = price;
         this.copies = copies;
     }
-    
-
     public void sellCopy(){
         //
-    }
-
-   
-    
-    
+    }    
     /**
      * @return the title
      */
