@@ -10,10 +10,12 @@ package lab4;
  *
  * @author maron
  */
-public class Publication implements SaleableItem{
+public class Publication implements SaleableItem {
     private String title;
     private double price;
     private int copies;
+    
+    double runningTotal;
 
     public Publication() {
         title="";
@@ -22,6 +24,7 @@ public class Publication implements SaleableItem{
         this.title = title;
         this.price = price;
         this.copies = copies;
+        
     }
     //public void sellCopy(){
         //
@@ -43,6 +46,7 @@ public class Publication implements SaleableItem{
     /**
      * @return the price
      */
+   
     public double getPrice() {
         return price;
     }
@@ -61,9 +65,6 @@ public class Publication implements SaleableItem{
         return copies;
     }
 
-    /**
-     * @param copies the copies to set
-     */
     
      @Override
     public String toString() {
@@ -78,7 +79,7 @@ public class Publication implements SaleableItem{
     public void setCopies(int copies) {
         this.copies = copies;
     }
-    
+
     @Override
     public void sellCopy(){
         System.out.println("************************************");
@@ -87,6 +88,10 @@ public class Publication implements SaleableItem{
         System.out.println("************************************");
         System.out.println();
     }
+    
+    
+    
+    
 }
 
    

@@ -12,16 +12,21 @@ package lab4;
 public class CashTill {
 
     private double runningTotal;
+    CashTill(){
+        runningTotal=0;
+    }
+    
     public void sellItem(SaleableItem item){
-        runningTotal+=item.getPrice();
+        runningTotal=(runningTotal + item.getPrice());
         item.sellCopy();
-        System.out.println(item + " for:" +item.getPrice());
+        System.out.println("Sold" +item+"@"+item.getPrice()+"\nSubtotal="+runningTotal);
         
     }
 
-    void showTotal() {
-        
+      public void showTotal() {
+        System.out.println("GRAND TOTAL:"+runningTotal);
     }
+}
     
     
 
@@ -30,4 +35,4 @@ public class CashTill {
             
 
    
-}
+

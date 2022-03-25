@@ -11,15 +11,12 @@ package lab4;
  *
  * @author maron
  */
-public class Book extends Publication {
-  private String author;
+public class Book extends lab4.Publication {
+    private String author;
 
     public Book() {
         super("", 0, 0);
     }
-     public Book(String author){
-         this.author=author;
-     }
     public Book(String author, String title, double price, int copies) {
         super(title, price, copies);
         this.author = author;
@@ -28,14 +25,8 @@ public class Book extends Publication {
     @Override
     public String toString() {
         String s=super.toString(); //To change body of generated methods, choose Tools | Templates.
-        return "Author:"+getAuthor()+", "+s;
+        return "Author:"+author+", "+s;
     }
-
-   /* @Override
-    public String toString() {
-        //String s=super.toString(); //To change body of generated methods, choose Tools | Templates.
-        return "Selling a Book";
-    }*/
 
     /**
      * @return the author
@@ -50,9 +41,20 @@ public class Book extends Publication {
     public void setAuthor(String author) {
         this.author = author;
     }
-     
+    @Override
+    public void sellCopy(){
+        System.out.println("************************************");
+        System.out.println("          Ticket Voucher            ");
+        System.out.println(toString());
+        System.out.println("************************************");
+        System.out.println();
+    }
+    
+       
+}  
+    
 
-}
+
   
 
     

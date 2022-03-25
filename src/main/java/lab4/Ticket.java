@@ -10,15 +10,21 @@ package lab4;
  * @author maron
  */
 public class Ticket implements SaleableItem{
+
+    
     private double price;
+    private String description;
+    private String client;
 
-    Ticket(double price, int copies) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+   
+    Ticket(double price, String description,String client ) {
+       
     }
-    
 
     
     
+    @Override
     public double getPrice() {
         return price;
     }
@@ -29,10 +35,46 @@ public class Ticket implements SaleableItem{
     public void setPrice(double price) {
         this.price = price;
     }
-     @Override
-    public String toString() {
-        return "Selling a Magazine";
+
+    /**
+     * @return the description
+     */
+    public String getDescription() {
+        return description;
     }
+
+    /**
+     * @param description the description to set
+     */
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * @return the client
+     */
+    public String getClient() {
+        return client;
+    }
+
+    /**
+     * @param client the client to set
+     */
+    public void setClient(String client) {
+        this.client = client;
+    }
+    
+  @Override
+    public String toString() {
+        return "Selling a Ticket: "+ " Price: "+getPrice()+ ", Description :"+getDescription()+", Client:"+getClient();
+    }
+    
+   
+    /*@Override
+    public String toString() {
+        return "Selling a Ticket: ";
+    
+                }*/
     
      @Override
     public void sellCopy(){
@@ -43,12 +85,9 @@ public class Ticket implements SaleableItem{
         System.out.println();
     }
 
-    String getCopies() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
-    void setCopies(String input) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
+
     
 }

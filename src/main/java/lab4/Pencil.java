@@ -9,7 +9,38 @@ package lab4;
  *
  * @author maron
  */
-public class Pencil extends Publication {
+public class Pencil implements SaleableItem {
+
+    /**
+     * @return the penPrice
+     */
+    public double getPenPrice() {
+        return penPrice;
+    }
+
+    /**
+     * @param penPrice the penPrice to set
+     */
+    public void setPenPrice(double penPrice) {
+        this.penPrice = penPrice;
+    }
+
+    /**
+     * @return the penQty
+     */
+    public int getPenQty() {
+        return penQty;
+    }
+
+    /**
+     * @param penQty the penQty to set
+     */
+    public void setPenQty(int penQty) {
+        this.penQty = penQty;
+    }
+    private double penPrice;
+    private int penQty;
+    
     
      @Override
     public String toString() {
@@ -28,4 +59,9 @@ public class Pencil extends Publication {
    
     
 }
+
+    @Override
+    public double getPrice() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

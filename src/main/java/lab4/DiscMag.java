@@ -32,27 +32,26 @@ public class DiscMag extends Magazine{
         this.hasDisc = hasDisc;
     }
     
-     @Override
-    public String toString() {
-        return "Author: "+getAuthor()+ "Title: "+getTitle()+", Price: "+getPrice()+", Copies: "+getCopies();
-    }
-
-    private String getAuthor() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
     /* @Override
     public String toString() {
-       
-        return "Selling a DiscMag";
+        return "Author: "+getAuthor()+ "Title: "+getTitle()+", Price: "+getPrice()+", Copies: "+getCopies()+",RunningTotal"+getRunningTotal();
     }*/
+
     
-     @Override
-     public void sellCopy(){
+    
+    @Override
+    public String toString() {
+        return "Selling a DiscMag: ";
+    
+                }
+    @Override
+    public void sellCopy(){
         System.out.println("************************************");
         System.out.println("          Ticket Voucher            ");
         System.out.println(toString());
         System.out.println("************************************");
         System.out.println();
-}
+    }
+      
+     
 }

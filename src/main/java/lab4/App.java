@@ -83,15 +83,15 @@ public class App {
         bookList = new Book[100];
         boolean exit = false;
         String mainMenu = ""
-                + "1. Add Book\n"
+                + "1. SellingBook\n"
                 + "2. List Book\n"
                 + "3. Edit Book\n"
                 + "4. Delete book\n"
-                + "5. Add Magazine\n"
+                + "5. Selling Magazine\n"
                 + "6. List Magazine\n"
-                + "7. Add Disc Magazine\n"
+                + "7.Selling Disc Magazine\n"
                 + "8. List Disc Magazine\n"
-                + "9. Add Ticket\n"
+                + "9. Selling Ticket\n"
                 + "10. List Ticket\n"
                 + "11. Edit Ticket\n"
                 + "12. Delete Ticket\n"
@@ -103,7 +103,7 @@ public class App {
             choice=getInput(choice);
             switch (choice) {
                 case 1:
-                    addBook();
+                    sellingBook();
                 break;
                 
                 case 2:
@@ -125,7 +125,7 @@ public class App {
 
                 case 5:
                      try {
-                    addMagazine();
+                    sellingMagazine();
                 } catch (Exception ex) {
                     Logger.getLogger(lab4.App.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -137,7 +137,7 @@ public class App {
 
                 case 7:
                      try {
-                    addDiscMag();
+                    sellingDiscMag();
                 } catch (Exception ex) {
                     Logger.getLogger(lab4.App.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -147,7 +147,7 @@ public class App {
                     break;
 
                 case 9:
-                    addTicket();
+                    sellingTicket();
                 break;
                 
                 case 10:
@@ -178,7 +178,7 @@ public class App {
         System.exit(0);
     }
 
-    private void addBook() {
+    private void sellingBook() {
         Book newBook=new Book();
         
         try {
@@ -193,10 +193,12 @@ public class App {
 
             System.out.println("Enter Copies");
             newBook.setCopies(getInput(newBook.getCopies()));
-
+            
+            
+            
             bookList[currentBook] = newBook;
             currentBook++;
-            // throw new Exception();
+             throw new Exception();
         } catch (Exception e) {
             //throw new Exception("Error Adding a Book");
             System.out.println("error: "+e.getMessage());
@@ -204,7 +206,7 @@ public class App {
 
     }
 
-    private void addMagazine() throws Exception {
+    private void sellingMagazine() throws Exception {
         try {
             Scanner scan = new Scanner(System.in);
             System.out.println("Enter Order Quantity");
@@ -217,23 +219,19 @@ public class App {
             double price = scan.nextDouble();
             System.out.println("Enter Copies");
             int copies = scan.nextInt();
-             System.out.println("Enter adjust quantity");
-            int adjustQty = scan.nextInt();
-             System.out.println("Enter New issue");
-            String recNewIssue = input.next();
-
-            Magazine magazine = new Magazine(orderQty, currIssue, title, price, copies,adjustQty,recNewIssue);
+          
+            Magazine magazine = new Magazine(orderQty, currIssue, title, price, copies);
 
             magazineList[currentMagazine] = magazine;
             currentMagazine++;
-            // throw new Exception();
+             throw new Exception();
         } catch (Exception e) {
-
+            System.out.println("error: "+e.getMessage());
         }
 
     }
 
-    private void addDiscMag() throws Exception {
+    private void sellingDiscMag() throws Exception {
         try {
             Scanner scan = new Scanner(System.in);
             System.out.println("Enter Order Quantity");
@@ -246,6 +244,7 @@ public class App {
             double price = scan.nextDouble();
             System.out.println("Enter Copies");
             int copies = scan.nextInt();
+             
 
             DiscMag discMag = new DiscMag(orderQty, currIssue, title, price, copies);
 
@@ -257,22 +256,24 @@ public class App {
         }
 
     }
-    private void addTicket() {
+    private void sellingTicket() {
         //Ticket newTicket=new Ticket();
         
         try {
             Scanner scan = new Scanner(System.in);
             System.out.println("Enter Price");
             double price = scan.nextDouble();
-            System.out.println("Enter Copies"); 
-            int copies = scan.nextInt();
+            System.out.println("Enter Description"); 
+           String description= input.next();
+            System.out.println("Enter Client"); 
+            String client = input.next();
 
-            Ticket ticket = new Ticket(price, copies);
-            ticketList[currentTicket] = ticket;
+            Ticket newTicket = new Ticket(price, description, client);
+            ticketList[currentTicket] = newTicket;
             currentTicket++;
-            
+            // throw new Exception();
         } catch (Exception e) {
-           
+           System.out.println("error: "+e.getMessage());
         }
 
     }
@@ -338,8 +339,10 @@ public class App {
            
             System.out.println("Price: " + t.getPrice());
             t.setPrice(getInput(t.getPrice()));
-            System.out.println("Copies: " + t.getCopies());
-            t.setCopies(getInput(t.getCopies()));
+            System.out.println("Description: " + t.getDescription());
+            t.setDescription(getInput(t.getDescription()));
+            System.out.println("Client: " + t.getClient());
+            t.setClient(getInput(t.getClient()));
         } else {
             System.out.println("Choice out of bounds");
         }
@@ -350,7 +353,7 @@ public class App {
    
 
  
-    private void listBook() {
+     private void listBook() {
 
         System.out.println("\nList all Books");
         System.out.println("-------------");
@@ -361,11 +364,11 @@ public class App {
                 break;
             }
             System.out.println((i + 1) + " " + bookList[i]);
-//      }
+
         }
     }
 
-    private void listMagazine() {
+   private void listMagazine() {
 
         System.out.println("\nList all Magazines");
         System.out.println("-------------");
@@ -376,7 +379,7 @@ public class App {
                 break;
             }
             System.out.println(i + " " + magazineList[i]);
-//      }
+
         }
     }
 
@@ -391,9 +394,10 @@ public class App {
                 break;
             }
             System.out.println(i + " " + discMagList[i]);
-//      }
+
         }
     }
+
 
 private void listTicket() {
 
@@ -406,7 +410,7 @@ private void listTicket() {
                 break;
             }
             System.out.println((i + 1) + " " + ticketList[i]);
-//      }
+
         }
     }
 
@@ -446,7 +450,8 @@ private void deleteTicket(int ticketdelete) throws Exception {
         }
 
     }
-
 }
+
+   
 
 

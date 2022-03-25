@@ -15,9 +15,8 @@ public class Magazine extends Publication{
     
     private int orderQty;
     private String  currIssue;
-    public int adjustQty;
-    public  String recNewIssue;
-   
+ 
+    
     
 
     
@@ -26,85 +25,53 @@ public class Magazine extends Publication{
         super(title, price, copies);
         this.orderQty = orderQty;
         this.currIssue = currIssue;
-        this.orderQty =orderQty ;
-        this.recNewIssue= recNewIssue;
-        
+       
         
     }
 
-    Magazine(int orderQty, String currIssue, String title, double price, int copies, int adjustQty, String recNewIssue) {
-        
-    }
+   
     /**
      * @return the currIssue
-     */
-    public String getCurrIssue() {
-        return currIssue;
-    }
-    public int getAdjustQty(){
-        return adjustQty;
-    }
-     public String getRecNewIssue(){
-        return recNewIssue;
-    }
-    /**
-     * @param currIssue the currIssue to set
-     */
-    public void setCurrIssue(String currIssue) {
-        this.currIssue = currIssue;
-    }
-    
-    public void setAdjustQty(int adjustQty){
-         this.adjustQty=adjustQty;
-     }
-      public void setRecNewIssue(String recNewIssue){
-        this.recNewIssue=recNewIssue;
-    }
-     
-    /**
-     * @return the orderQty
      */
     public int getOrderQty() {
         return orderQty;
     }
-     public void setOrderQty(int orderQty) {
+    public String getCurrIssue() {
+        return currIssue;
+    }
+   
+   
+    public void setOrderQty(int orderQty) {
         this.orderQty = orderQty;
     }
-
-    /**
-     * @param orderQty the orderQty to set
-     */
-    
-    
-    
-    
      
+    public void setCurrIssue(String currIssue) {
+        this.currIssue = currIssue;
+    }
     
     
-    
-   
-    
+
+
     
     @Override
     public String toString() {
-        return "OrderQty: "+getOrderQty()+", CurrIssue: "+getCurrIssue();
+        return "Selling a Magazine: "+"OrderQty: "+getOrderQty()+", CurrIssue: "+getCurrIssue();
     }
 
-    
-    
-    /* @Override
+    /*@Override
     public String toString() {
-        return "Selling a Magazine";
-    }*/
-
-     @Override
-  public void sellCopy(){
+        return "Selling a Magazine: ";
+    
+                }*/
+@Override
+    public void sellCopy(){
         System.out.println("************************************");
         System.out.println("          Ticket Voucher            ");
         System.out.println(toString());
         System.out.println("************************************");
         System.out.println();
-}  
+    }
+  
 }
     
   
