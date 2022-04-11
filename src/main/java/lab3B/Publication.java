@@ -22,9 +22,7 @@ public class Publication {
         this.price = price;
         this.copies = copies;
     }
-    public void sellCopy(){
-        //
-    }    
+      
     /**
      * @return the title
      */

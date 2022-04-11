@@ -3,12 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lab3B;
+package lab5A;
 
+import lab4.*;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import lab3B.*;
+
+
+
 
 /**
  *
@@ -16,6 +19,12 @@ import lab3B.*;
  */
 public class App {
 
+   
+    
+    
+  
+    
+   
     private final int numBook = 100;
     private Book[] bookList = new Book[numBook];
     private Book[] delete = new Book[numBook];
@@ -34,22 +43,37 @@ public class App {
     private int currentDiscMag = 0;
     private int delCurrentIndexDiscMag = 0;
 
+   
+
+    private final int numTicket= 100;
+    private Ticket[] ticketList = new Ticket[numTicket];
+    private Ticket[] deleteTicket = new Ticket[numTicket];
+    private int currentTicket = 0;
+    private int delCurrentIndexTicket = 0;
+
     private Scanner input;
 
-    void run() throws Exception {
+    public void run() throws Exception {
+        
+        
+    
         input=new Scanner(System.in);
         bookList = new Book[100];
         boolean exit = false;
         String mainMenu = ""
-                + "1. Add Book\n"
-                + "2. Edit Book\n"
-                + "3. Delete Book\n"
-                + "4. Add Magazine\n"
-                + "5. List Magazine\n"
-                + "6. Add Disc Magazine\n"
-                + "7. List Disc Magazine\n"
-                + "8. Exit\n"
-                + "9. List books";
+                + "1. SellingBook\n"
+                + "2. List Book\n"
+                + "3. Edit Book\n"
+                + "4. Delete book\n"
+                + "5. Selling Magazine\n"
+                + "6. List Magazine\n"
+                + "7.Selling Disc Magazine\n"
+                + "8. List Disc Magazine\n"
+                + "9. Selling Ticket\n"
+                + "10. List Ticket\n"
+                + "11. Edit Ticket\n"
+                + "12. Delete Ticket\n"
+                + "0. Exit";
         while (!exit) {
 //            input = new Scanner(System.in);
             System.out.println(mainMenu);
@@ -57,49 +81,72 @@ public class App {
             choice=getInput(choice);
             switch (choice) {
                 case 1:
-                    addBook();
+                    Book();
                 break;
-
+                
                 case 2:
+                    listBook();
+                    break;
+                    
+                 case 3:
                     editBook();
+                   
                     break;
 
-                case 3:
-
+                case 4:
                     System.out.println("Choose a Book to delete");
                     listBook();
                     int choice1 = input.nextInt();
                     deleteBook(choice1);
+                    
                     break;
 
-                case 4:
+                case 5:
                      try {
-                    addMagazine();
+                    Magazine();
                 } catch (Exception ex) {
-                    Logger.getLogger(lab3B.App.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(lab4.App.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 break;
 
-                case 5:
+                case 6:
                     listMagazine();
                     break;
 
-                case 6:
+                case 7:
                      try {
-                    addDiscMag();
+                    DiscMag();
                 } catch (Exception ex) {
-                    Logger.getLogger(lab3B.App.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(lab4.App.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 break;
-                case 7:
+                case 8:
                     listDiscMag();
                     break;
 
                 case 9:
-                    listBook();
+                    Ticket();
+                break;
+                
+                case 10:
+                    listTicket();
                     break;
 
-                case 8:
+                
+                 case 11:
+                    editTicket();
+                   
+                    break;
+
+                case 12:
+                    System.out.println("Choose a Ticket to delete");
+                    listTicket();
+                    int choice2 = input.nextInt();
+                    deleteTicket(choice2);
+                    
+                    break;
+                    
+                case 0:
                     exit = true;
                     break;
                 default:
@@ -109,38 +156,35 @@ public class App {
         System.exit(0);
     }
 
-    private void addBook() {
+    private void Book() {
         Book newBook=new Book();
         
         try {
-
+;
             System.out.println("Enter Author");
             newBook.setAuthor(getInput(newBook.getAuthor()));
 
             System.out.println("Add Title ");
-//            String title = input.next();
             newBook.setTitle(getInput(newBook.getTitle()));
             System.out.println("Enter Price");
-//            double price = scan.nextDouble();
             newBook.setPrice(getInput(newBook.getPrice()));
 
             System.out.println("Enter Copies");
-//            int copies = scan.nextInt();
             newBook.setCopies(getInput(newBook.getCopies()));
-
-//String choice = scan.nextLine();
-//            Book book = new Book(author, title, price, copies);
-            //int currentBook = 0;
+            
+            
+            
             bookList[currentBook] = newBook;
             currentBook++;
-            // throw new Exception();
+             throw new Exception();
         } catch (Exception e) {
             //throw new Exception("Error Adding a Book");
+            System.out.println("error: "+e.getMessage());
         }
 
     }
 
-    private void addMagazine() throws Exception {
+    private void Magazine() throws Exception {
         try {
             Scanner scan = new Scanner(System.in);
             System.out.println("Enter Order Quantity");
@@ -153,19 +197,19 @@ public class App {
             double price = scan.nextDouble();
             System.out.println("Enter Copies");
             int copies = scan.nextInt();
-
+          
             Magazine magazine = new Magazine(orderQty, currIssue, title, price, copies);
 
             magazineList[currentMagazine] = magazine;
             currentMagazine++;
-            // throw new Exception();
+             throw new Exception();
         } catch (Exception e) {
-
+            System.out.println("error: "+e.getMessage());
         }
 
     }
 
-    private void addDiscMag() throws Exception {
+    private void DiscMag() throws Exception {
         try {
             Scanner scan = new Scanner(System.in);
             System.out.println("Enter Order Quantity");
@@ -178,6 +222,7 @@ public class App {
             double price = scan.nextDouble();
             System.out.println("Enter Copies");
             int copies = scan.nextInt();
+             
 
             DiscMag discMag = new DiscMag(orderQty, currIssue, title, price, copies);
 
@@ -189,6 +234,28 @@ public class App {
         }
 
     }
+    private void Ticket() {
+        //Ticket newTicket=new Ticket();
+        
+        try {
+            Scanner scan = new Scanner(System.in);
+            System.out.println("Enter Price");
+            double price = scan.nextDouble();
+            System.out.println("Enter Description"); 
+           String description= input.next();
+            System.out.println("Enter Client"); 
+            String client = input.next();
+
+            Ticket newTicket = new Ticket(price, description, client);
+            ticketList[currentTicket] = newTicket;
+            currentTicket++;
+            // throw new Exception();
+        } catch (Exception e) {
+           System.out.println("error: "+e.getMessage());
+        }
+
+    }
+
 
     private void editBook() {
         listBook();
@@ -239,7 +306,32 @@ public class App {
         return in2.nextDouble();
     }
 
-    private void listBook() {
+    private void editTicket() {
+        listTicket();
+        System.out.println("Which Ticket would you like to edit ?:");
+        int choice=0;
+        choice=getInput(choice);
+
+         if ((choice <= currentTicket + 1) && choice > 0) {
+            Ticket t = ticketList[choice - 1];
+           
+            System.out.println("Price: " + t.getPrice());
+            t.setPrice(getInput(t.getPrice()));
+            System.out.println("Description: " + t.getDescription());
+            t.setDescription(getInput(t.getDescription()));
+            System.out.println("Client: " + t.getClient());
+            t.setClient(getInput(t.getClient()));
+        } else {
+            System.out.println("Choice out of bounds");
+        }
+        System.out.println("");
+    }
+
+
+   
+
+ 
+     private void listBook() {
 
         System.out.println("\nList all Books");
         System.out.println("-------------");
@@ -254,7 +346,7 @@ public class App {
         }
     }
 
-    private void listMagazine() {
+   private void listMagazine() {
 
         System.out.println("\nList all Magazines");
         System.out.println("-------------");
@@ -265,7 +357,7 @@ public class App {
                 break;
             }
             System.out.println(i + " " + magazineList[i]);
-//      }
+
         }
     }
 
@@ -280,9 +372,26 @@ public class App {
                 break;
             }
             System.out.println(i + " " + discMagList[i]);
-//      }
+
         }
     }
+
+
+private void listTicket() {
+
+        System.out.println("\nList all Tickets");
+        System.out.println("-------------");
+
+        for (int i = 0; i < ticketList.length; i++) {
+
+            if (ticketList[i] == null) {
+                break;
+            }
+            System.out.println((i + 1) + " " + ticketList[i]);
+
+        }
+    }
+
 
     private void deleteBook(int bookdelete) throws Exception {
 
@@ -301,6 +410,26 @@ public class App {
         }
 
     }
+    
+private void deleteTicket(int ticketdelete) throws Exception {
 
+        try {
 
+            System.out.println("Delete BTicket");
+
+            for (int i = ticketdelete; i < ticketList.length; i++) {
+               ticketList[i - 1] = ticketList[i];
+
+                currentTicket = currentTicket--;
+            }
+
+        } catch (Exception e) {
+            throw new Exception("Error Adding a Ticket");
+        }
+
+    }
 }
+
+   
+
+

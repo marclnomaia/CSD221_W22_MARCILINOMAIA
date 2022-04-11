@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<entity-mappings ptype="MONOLITH" ppkg="Lab5_jpa" epkg="entiies" v="5.4.3" rws="_164909209872435" Pws="_164909209872435" cws="_164909209872435" persistenceUnitName="lab5" sm="false" xs="false" id="_164909209872434" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <entity compositePrimaryKeyClass="PublicationPK" abs="false" class="Publication" v="true" jbn="false" xre="false" m="false" rootElement="_164909209872434" id="_164909237431037">
+        <ath>maron</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="title" id="_164909250489155">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="double" v="true" xvt="" name="price" id="_164909250712656">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="int" v="true" xvt="" name="copies" id="_164909250747557">
+                <xwm/>
+                <xm/>
+            </basic>
+            <id attribute-type="Long" v="true" xvt="" name="id" id="_164909237431838">
+                <xwm/>
+                <xm/>
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="Publication.findAll">
+            <query>Select e from Publication e</query>
+        </nq>
+        <nq e="false" name="Publication.findByTitle">
+            <query>Select p from Publication p where p.title=:title</query>
+        </nq>
+        <nq e="false" name="Publication.findByPrice">
+            <query>Select p from Publication p where p.price=:price</query>
+        </nq>
+        <nq e="false" name="Publication.findByCopies">
+            <query>Select p from Publication p where p.copies=:copies</query>
+        </nq>
+        <discriminator-column/>
+    </entity>
+    <entity compositePrimaryKeyClass="MagazinePK" abs="false" class="Magazine" superclassId="_164909237431037" v="true" jbn="false" xre="false" m="false" rootElement="_164909209872434" id="_164909237936943">
+        <ath>maron</ath>
+        <attributes>
+            <basic attribute-type="int" v="true" xvt="" name="orderQty" id="_164909251661558">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="currIssue" id="_164909251687159">
+                <xwm/>
+                <xm/>
+            </basic>
+        </attributes>
+        <nq e="false" name="Magazine.findAll">
+            <query>Select e from Magazine e</query>
+        </nq>
+        <nq e="false" name="Magazine.findByOrderQty">
+            <query>Select m from Magazine m where m.orderQty=:orderQty</query>
+        </nq>
+        <nq e="false" name="Magazine.findByCurrIssue">
+            <query>Select m from Magazine m where m.currIssue=:currIssue</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="BookPK" abs="false" class="Book" superclassId="_164909237431037" v="true" jbn="false" xre="false" m="false" rootElement="_164909209872434" id="_164909238139746">
+        <ath>maron</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="author" id="_164909252161360">
+                <xwm/>
+                <xm/>
+            </basic>
+        </attributes>
+        <nq e="false" name="Book.findAll">
+            <query>Select e from Book e</query>
+        </nq>
+        <nq e="false" name="Book.findByAuthor">
+            <query>Select b from Book b where b.author=:author</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="PencilPK" abs="false" class="Pencil" v="true" jbn="false" xre="false" m="false" rootElement="_164909209872434" id="_164909238334349">
+        <ath>maron</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="brand" id="_164909253272064">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="int" v="true" xvt="" name="quantity" id="_164909253292565">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="double" v="true" xvt="" name="price" id="_164909253315566">
+                <xwm/>
+                <xm/>
+            </basic>
+            <id attribute-type="Long" v="true" xvt="" name="id" id="_164909238334350">
+                <xwm/>
+                <xm/>
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="Pencil.findAll">
+            <query>Select e from Pencil e</query>
+        </nq>
+        <nq e="false" name="Pencil.findByBrand">
+            <query>Select p from Pencil p where p.brand=:brand</query>
+        </nq>
+        <nq e="false" name="Pencil.findByQuantity">
+            <query>Select p from Pencil p where p.quantity=:quantity</query>
+        </nq>
+        <nq e="false" name="Pencil.findByPrice">
+            <query>Select p from Pencil p where p.price=:price</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="TicketPK" abs="false" class="Ticket" v="true" jbn="false" xre="false" m="false" rootElement="_164909209872434" id="_164909239180352">
+        <ath>maron</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="description" id="_164909252723061">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="double" v="true" xvt="" name="price" id="_164909252745662">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="client" id="_164909252767463">
+                <xwm/>
+                <xm/>
+            </basic>
+            <id attribute-type="Long" v="true" xvt="" name="id" id="_164909239180453">
+                <xwm/>
+                <xm/>
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="Ticket.findAll">
+            <query>Select e from Ticket e</query>
+        </nq>
+        <nq e="false" name="Ticket.findByDescription">
+            <query>Select t from Ticket t where t.description=:description</query>
+        </nq>
+        <nq e="false" name="Ticket.findByPrice">
+            <query>Select t from Ticket t where t.price=:price</query>
+        </nq>
+        <nq e="false" name="Ticket.findByClient">
+            <query>Select t from Ticket t where t.client=:client</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="DiscMagPK" abs="false" class="DiscMag" superclassId="_164909237936943" v="true" jbn="false" xre="false" m="false" rootElement="_164909209872434" id="_164909288817471">
+        <ath>maron</ath>
+        <attributes>
+            <basic attribute-type="boolean" v="true" xvt="" name="hasDisc" id="_164909288817473">
+                <xwm/>
+                <xm/>
+            </basic>
+        </attributes>
+        <nq e="false" name="DiscMag.findAll">
+            <query>Select e from DiscMag e</query>
+        </nq>
+        <nq e="false" name="DiscMag.findByHasDisc">
+            <query>Select b from DiscMag b where b.hasDisc=:hasDisc</query>
+        </nq>
+    </entity>
+    <c/>
+    <wsl>
+        <ws n="Main" id="_164909209872435">
+            <i ref="_164909239180352" x="246" y="465"/>
+            <i ref="_164909238139746" x="129" y="254"/>
+            <i ref="_164909238334349" x="568" y="465"/>
+            <i ref="_164909237431037" x="416" y="88"/>
+            <i ref="_164909288817471" x="847" y="392"/>
+            <i ref="_164909237936943" x="491" y="290"/>
+        </ws>
+    </wsl>
+</entity-mappings>
