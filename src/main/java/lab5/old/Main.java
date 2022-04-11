@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lab5A;
+package lab5.old;
 
 /**
  *
@@ -12,6 +12,6 @@ package lab5A;
 
 public class Main {
 public static void main(String[] args) throws Exception  {
-        new lab5A.App().run();
+//        new lab5.App().run();
 }
 }

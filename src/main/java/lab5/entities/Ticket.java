@@ -1,29 +1,29 @@
-package lab5A;
+package lab5.entities;
 
+import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import lab5.SaleableItem;
 
 /**
  * @author maron
  */
+
 @Entity
-public class Ticket {
+public class Ticket implements SaleableItem, Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Basic
     private String description;
     @Basic
-    private String price;
+    private double price;
     @Basic
     private String client;
-
-    Ticket(double price, String description, String client) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
     public Long getId() {
         return id;
@@ -41,11 +41,11 @@ public class Ticket {
         this.description = description;
     }
 
-    public String getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -55,6 +55,20 @@ public class Ticket {
 
     public void setClient(String client) {
         this.client = client;
+    }
+
+    @Override
+    public void sellCopy() {
+    }
+
+    public Ticket(String description, double price, String client) {
+        this.id = id;
+        this.description = description;
+        this.price = price;
+        this.client = client;
+    }
+
+    public Ticket() {
     }
 
 }

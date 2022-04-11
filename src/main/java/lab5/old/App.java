@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lab5A;
+package lab5.old;
 
-import lab4.*;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -20,7 +19,7 @@ import java.util.logging.Logger;
 public class App {
 
    
-    
+/*    
     
   
     
@@ -428,6 +427,7 @@ private void deleteTicket(int ticketdelete) throws Exception {
         }
 
     }
+*/
 }
 
    

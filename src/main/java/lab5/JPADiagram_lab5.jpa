@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<entity-mappings ptype="MONOLITH" ppkg="Lab5_jpa" epkg="entiies" v="5.4.3" rws="_164909209872435" Pws="_164909209872435" cws="_164909209872435" persistenceUnitName="lab5" sm="false" xs="false" id="_164909209872434" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<entity-mappings ptype="MONOLITH" ppkg="lab5" epkg="entities" v="5.4.3" rws="_164909209872435" Pws="_164909209872435" cws="_164909209872435" persistenceUnitName="lab5" sm="false" xs="false" id="_164909209872434" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <entity compositePrimaryKeyClass="PublicationPK" abs="false" class="Publication" v="true" jbn="false" xre="false" m="false" rootElement="_164909209872434" id="_164909237431037">
         <ath>maron</ath>
         <attributes>
@@ -18,7 +18,7 @@
             <id attribute-type="Long" v="true" xvt="" name="id" id="_164909237431838">
                 <xwm/>
                 <xm/>
-                <generated-value strategy="DEFAULT"/>
+                <generated-value strategy="IDENTITY"/>
             </id>
         </attributes>
         <nq e="false" name="Publication.findAll">
@@ -90,7 +90,7 @@
             <id attribute-type="Long" v="true" xvt="" name="id" id="_164909238334350">
                 <xwm/>
                 <xm/>
-                <generated-value strategy="DEFAULT"/>
+                <generated-value strategy="IDENTITY"/>
             </id>
         </attributes>
         <nq e="false" name="Pencil.findAll">
@@ -124,7 +124,7 @@
             <id attribute-type="Long" v="true" xvt="" name="id" id="_164909239180453">
                 <xwm/>
                 <xm/>
-                <generated-value strategy="DEFAULT"/>
+                <generated-value strategy="IDENTITY"/>
             </id>
         </attributes>
         <nq e="false" name="Ticket.findAll">
@@ -158,12 +158,12 @@
     <c/>
     <wsl>
         <ws n="Main" id="_164909209872435">
-            <i ref="_164909239180352" x="246" y="465"/>
+            <i ref="_164909239180352" x="85" y="414"/>
             <i ref="_164909238139746" x="129" y="254"/>
-            <i ref="_164909238334349" x="568" y="465"/>
-            <i ref="_164909237431037" x="416" y="88"/>
-            <i ref="_164909288817471" x="847" y="392"/>
-            <i ref="_164909237936943" x="491" y="290"/>
+            <i ref="_164909238334349" x="324" y="432"/>
+            <i ref="_164909237431037" x="277" y="48"/>
+            <i ref="_164909288817471" x="592" y="374"/>
+            <i ref="_164909237936943" x="425" y="254"/>
         </ws>
     </wsl>
 </entity-mappings>
