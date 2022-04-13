@@ -25,6 +25,16 @@ public class Ticket implements SaleableItem, Serializable {
     @Basic
     private String client;
 
+    public Ticket(String description, double price, String client) {
+        this.id = id;
+        this.description = description;
+        this.price = price;
+        this.client = client;
+    }
+
+    public Ticket() {
+    }
+
     public Long getId() {
         return id;
     }
@@ -60,15 +70,11 @@ public class Ticket implements SaleableItem, Serializable {
     @Override
     public void sellCopy() {
     }
+@Override
+    public String toString() {
+        // To change body of generated methods, choose Tools | Templates.
+        return "Ticket: " + description + " " + price+" "+ client;
 
-    public Ticket(String description, double price, String client) {
-        this.id = id;
-        this.description = description;
-        this.price = price;
-        this.client = client;
-    }
-
-    public Ticket() {
-    }
-
+}
+    
 }

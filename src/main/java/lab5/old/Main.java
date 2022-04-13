@@ -12,6 +12,6 @@ package lab5.old;
 
 public class Main {
 public static void main(String[] args) throws Exception  {
-//        new lab5.App().run();
+   //  new lab5.App().run();
 }
 }

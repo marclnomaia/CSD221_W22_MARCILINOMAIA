@@ -25,10 +25,6 @@ public class Publication implements SaleableItem, Serializable {
     @Basic
     private int copies;
 
-    public Long getId() {
-        return id;
-    }
-
     public Publication() {
     }
 
@@ -37,8 +33,10 @@ public class Publication implements SaleableItem, Serializable {
         this.price = price;
         this.copies = copies;
     }
-    
-    
+
+    public Long getId() {
+        return id;
+    }
 
     public void setId(Long id) {
         this.id = id;
@@ -75,7 +73,8 @@ public class Publication implements SaleableItem, Serializable {
 
     @Override
     public String toString() {
-        return "title: "+title+" price: "+price+" copies: "+copies; //To change body of generated methods, choose Tools | Templates.
+        // To change body of generated methods, choose Tools | Templates.
+        return "title: " + title + " price: " + price + " copies: " + copies;
     }
 
 }

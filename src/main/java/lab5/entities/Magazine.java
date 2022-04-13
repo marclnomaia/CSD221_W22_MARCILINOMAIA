@@ -15,6 +15,20 @@ public class Magazine extends Publication {
     @Basic
     private String currIssue;
 
+    public Magazine(int orderQty, String currIssue, String title, double price, int copies) {
+        super(title, price, copies);
+        this.orderQty = orderQty;
+        this.currIssue = currIssue;
+    }
+
+    public Magazine(int orderQty, String currIssue) {
+        this.orderQty = orderQty;
+        this.currIssue = currIssue;
+    }
+
+    public Magazine() {
+    }
+
     public int getOrderQty() {
         return orderQty;
     }
@@ -33,21 +47,7 @@ public class Magazine extends Publication {
 
     @Override
     public void sellCopy() {
-        // To change body of generated methods, choose Tools | Templates.
-    }
-
-    public Magazine(int orderQty, String currIssue, String title, double price, int copies) {
-        super(title, price, copies);
-        this.orderQty = orderQty;
-        this.currIssue = currIssue;
-    }
-
-    public Magazine(int orderQty, String currIssue) {
-        this.orderQty = orderQty;
-        this.currIssue = currIssue;
-    }
-
-    public Magazine() {
+// To change body of generated methods, choose Tools | Templates.
     }
 
 }

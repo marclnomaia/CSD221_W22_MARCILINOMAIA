@@ -7,10 +7,10 @@ package lab5;
 
 /**
  *
- * @author fcarella
+ * @author maron
  */
 public class Main {
     public static void main(String[] args) {
-        new App().run();
+        new lab5.App().run();
     }
 }

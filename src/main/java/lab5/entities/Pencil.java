@@ -1,5 +1,6 @@
 package lab5.entities;
 
+import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,8 +11,9 @@ import lab5.SaleableItem;
 /**
  * @author maron
  */
+
 @Entity
-public class Pencil implements SaleableItem{
+public class Pencil implements SaleableItem, Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,6 +24,18 @@ public class Pencil implements SaleableItem{
     private int quantity;
     @Basic
     private double price;
+   
+   
+
+    public Pencil(String brand, int quantity, double price) {
+        this.id = id;
+        this.brand = brand;
+        this.quantity = quantity;
+        this.price = price;
+    }
+
+    public Pencil() {
+    }
 
     public Long getId() {
         return id;
@@ -59,15 +73,10 @@ public class Pencil implements SaleableItem{
     @Override
     public void sellCopy() {
     }
-
-    public Pencil(String brand, int quantity, double price) {
-        this.id = id;
-        this.brand = brand;
-        this.quantity = quantity;
-        this.price = price;
-    }
-
-    public Pencil() {
-    }
+    @Override
+    public String toString() {
+        // To change body of generated methods, choose Tools | Templates.
+        return "Pencil: " + brand + " " + quantity+" "+ price;
 
 }
+    }

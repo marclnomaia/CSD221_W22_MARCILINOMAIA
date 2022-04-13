@@ -13,18 +13,6 @@ public class Book extends Publication {
     @Basic
     private String author;
 
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    @Override
-    public void sellCopy() {
-    }
-
     public Book(String author, String title, double price, int copies) {
         super(title, price, copies);
         this.author = author;
@@ -37,9 +25,22 @@ public class Book extends Publication {
     public Book() {
     }
 
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    @Override
+    public void sellCopy() {
+    }
+
     @Override
     public String toString() {
-        return "Author: "+author+" "+super.toString(); //To change body of generated methods, choose Tools | Templates.
+        // To change body of generated methods, choose Tools | Templates.
+        return "Author: " + author + " " + super.toString();
     }
 
 }
