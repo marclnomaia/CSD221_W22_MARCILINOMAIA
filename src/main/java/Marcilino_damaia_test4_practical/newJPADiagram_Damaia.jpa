@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<entity-mappings ptype="MONOLITH" ppkg="Marcilino_damaia_test4_practical" epkg="entities" v="5.4.3" rws="_165057422168722" Pws="_165057422168722" cws="_165057422168722" persistenceUnitName="Marcilino_damaia_test4_practical" sm="false" xs="false" id="_165057422168721" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <entity name="Marcilino_damaia_test4_practical" compositePrimaryKeyClass="Shape_DamaiaPK" abs="false" class="Shape_Damaia" v="true" jbn="false" xre="false" m="false" rootElement="_165057422168721" id="_165057461016154">
+        <ath>maron</ath>
+        <attributes>
+            <basic attribute-type="double" v="true" xvt="" name="area" id="_165057485255472">
+                <xwm/>
+                <xm/>
+            </basic>
+            <id attribute-type="double" v="true" xvt="" name="id" id="_165057461017855">
+                <xwm/>
+                <xm/>
+                <generated-value strategy="IDENTITY"/>
+            </id>
+        </attributes>
+        <nq e="false" name="Shape_Damaia.findAll">
+            <query>Select e from Shape_Damaia e</query>
+        </nq>
+        <nq e="false" name="Shape_Damaia.findByArea">
+            <query>Select s from Shape_Damaia s where s.area=:area</query>
+        </nq>
+        <discriminator-column/>
+    </entity>
+    <entity compositePrimaryKeyClass="Triangle_DamaiaPK" abs="false" class="Triangle_Damaia" superclassId="_165057461016154" v="true" jbn="false" xre="false" m="false" rootElement="_165057422168721" id="_165057461178857">
+        <ath>maron</ath>
+        <attributes>
+            <basic attribute-type="double" v="true" xvt="" name="base" id="_165057483505870">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="double" v="true" xvt="" name="height" id="_165057483547471">
+                <xwm/>
+                <xm/>
+            </basic>
+        </attributes>
+        <nq e="false" name="Triangle_Damaia.findAll">
+            <query>Select e from Triangle_Damaia e</query>
+        </nq>
+        <nq e="false" name="Triangle_Damaia.findByBase">
+            <query>Select t from Triangle_Damaia t where t.base=:base</query>
+        </nq>
+        <nq e="false" name="Triangle_Damaia.findByHeight">
+            <query>Select t from Triangle_Damaia t where t.height=:height</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="Square_DamaiaPK" abs="false" class="Square_Damaia" superclassId="_165057461016154" v="true" jbn="false" xre="false" m="false" rootElement="_165057422168721" id="_165057461508663">
+        <ath>maron</ath>
+        <attributes>
+            <basic attribute-type="Double" v="true" xvt="" name="theLength" id="_165057478234068">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="double" v="true" xvt="" name="width" id="_165057480576869">
+                <xwm/>
+                <xm/>
+            </basic>
+        </attributes>
+        <nq e="false" name="Square_Damaia.findAll">
+            <query>Select e from Square_Damaia e</query>
+        </nq>
+        <nq e="false" name="Square_Damaia.findByLength">
+            <query>Select s from Square_Damaia s where s.Length=:Length</query>
+        </nq>
+        <nq e="false" name="Square_Damaia.findByWidth">
+            <query>Select s from Square_Damaia s where s.Width=:Width</query>
+        </nq>
+        <nq e="false" name="Square_Damaia.findByTheLength">
+            <query>Select s from Square_Damaia s where s.theLength=:theLength</query>
+        </nq>
+        <nq e="false" name="Square_Damaia.findByWidth">
+            <query>Select s from Square_Damaia s where s.width=:width</query>
+        </nq>
+    </entity>
+    <c/>
+    <wsl>
+        <ws n="Main" id="_165057422168722">
+            <i ref="_165057461178857" x="576" y="318"/>
+            <i ref="_165057461016154" x="311" y="154"/>
+            <i ref="_165057461508663" x="84" y="318"/>
+        </ws>
+    </wsl>
+</entity-mappings>
