@@ -24,7 +24,7 @@ public class Pencil implements SaleableItem, Serializable {
     private int quantity;
     @Basic
     private double price;
-   
+    
    
 
     public Pencil(String brand, int quantity, double price) {
