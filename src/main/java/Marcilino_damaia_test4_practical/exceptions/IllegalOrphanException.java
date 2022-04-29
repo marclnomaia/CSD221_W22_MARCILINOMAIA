@@ -1,4 +1,4 @@
-package Marcilino_damaia_test4_practical.Controllers.exceptions;
+package Marcilino_damaia_test4_practical.exceptions;
 
 import java.util.ArrayList;
 import java.util.List;

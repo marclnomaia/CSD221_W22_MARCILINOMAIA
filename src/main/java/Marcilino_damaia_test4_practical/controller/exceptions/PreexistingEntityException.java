@@ -1,4 +1,4 @@
-package Marcilino_damaia_test4_practical.Controllers.exceptions;
+package Marcilino_damaia_test4_practical.controller.exceptions;
 
 public class PreexistingEntityException extends Exception {
     public PreexistingEntityException(String message, Throwable cause) {

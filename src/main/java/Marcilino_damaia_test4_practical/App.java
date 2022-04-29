@@ -38,7 +38,7 @@ public class App {
     private Object ex;
 
     void run() {
-        emf = Persistence.createEntityManagerFactory("Marcilino_damaia_test4_practical");
+        emf = Persistence.createEntityManagerFactory("Marcilino_damaia_test4_PU");
         sh = new Shape_DamaiaJpaController(emf);
         tr = new Triangle_DamaiaJpaController(emf);
         sq = new Square_DamaiaJpaController(emf);
