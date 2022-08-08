@@ -136,12 +136,5 @@ private final int numPerson = 20;
         return in2.nextDouble();
     }
 
-    private void deletePerson() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void listPerson(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+   
 }

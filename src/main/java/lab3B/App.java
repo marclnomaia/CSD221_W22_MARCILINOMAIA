@@ -48,8 +48,9 @@ public class App {
                 + "5. List Magazine\n"
                 + "6. Add Disc Magazine\n"
                 + "7. List Disc Magazine\n"
-                + "8. Exit\n"
-                + "9. List books";
+                + "8. List books"
+                + "9. Exit\n";
+                
         while (!exit) {
 //            input = new Scanner(System.in);
             System.out.println(mainMenu);
@@ -95,11 +96,11 @@ public class App {
                     listDiscMag();
                     break;
 
-                case 9:
+                case 8:
                     listBook();
                     break;
 
-                case 8:
+                case 9:
                     exit = true;
                     break;
                 default:
